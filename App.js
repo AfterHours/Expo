@@ -15,61 +15,55 @@ export default function App(){
   // console.log('React native debugging');
   function getLog() {
     console.log('Text pressed');
-    Alert.alert('text pressed!', 'to should have pressed the text');
+    Alert.alert('text pressed!', 'you should have pressed the text');
   }
   return (
       <SafeAreaView style={styles.container}>
-        <Text style={styles.title} onPress={() => getLog()}>
-          Login
-        </Text>
-        
-        <TouchableOpacity
-            style={[styles.buttonContents, styles.buttonFacebook]}
-            onPress={() => {
-              console.log('Button pressed');
+        <Text style={styles.LoginText} onPress={() => getLog()}> Login </Text>
+        <View style={[styles.buttonStyles,styles.buttonFacebook]}
+        onPress={() => {
+              console.log('FB Button pressed');
             }}>
           <Text
               style={styles.buttonText}
               accessibilityLabel="Sign up with Facebook button">
             Sign up with Facebook
           </Text>
-        </TouchableOpacity>
-        
-        <TouchableOpacity
-            style={[styles.buttonContents, styles.buttonLinkedIn]}
-            onPress={() => {
-              console.log('Button pressed');
+        </View>
+        <View style={[styles.buttonStyles,styles.buttonLinkedIn]}
+        onPress={() => {
+              console.log('LinkedIn Button pressed');
             }}>
           <Text
               style={styles.buttonText}
               accessibilityLabel="Sign up with LinkedIn button">
             Sign up with LinkedIn
           </Text>
-        </TouchableOpacity>
-        
-        <View style={[styles.buttonContents, styles.row]}>
-          <View style={styles.horizontal} />
-          <View>
-            <Text style={styles.horizontalText}>or</Text>
-          </View>
-          <View style={styles.horizontal} />
         </View>
-        
-        <TouchableOpacity
-            style={[styles.buttonContents, styles.buttonEmail]}
-            onPress={() => {
-              console.log('Button pressed');
+
+        <View style={[styles.buttonStyles, styles.row]}>
+          <View style={styles.dividerLine} />
+          <View>
+            <Text style={styles.dividerText}>or</Text>
+          </View>
+          <View style={styles.dividerLine} />
+        </View>
+
+        <View style={[styles.buttonStyles,styles.buttonEmail]}
+        onPress={() => {
+              console.log('Email Button pressed');
             }}>
           <Text
               style={styles.buttonText}
               accessibilityLabel="Sign up with Email button">
             Sign up using Email
           </Text>
-        </TouchableOpacity>
+        </View>                      
+
       </SafeAreaView>
   );
 }
-
+ 
 const styles = StyleSheet.create({
   container: {
     fontFamily: 'Roboto',
@@ -78,14 +72,16 @@ const styles = StyleSheet.create({
     //Not a normal css property, part of react native enhancements
     // paddingHorizontal: 24,
     flex: 1,
-    // flexDirection: 'column',
-    // alignItems: 'center',
-    backgroundColor: colors.grey,
+    flexDirection: 'column',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    backgroundColor: colors.white,
   },
-  title: {
+  LoginText: {
     fontSize: 30,
+    marginRight: 30,
     fontWeight: 'bold',
-    color: colors.black,
+    color: '#012e67',
     position: 'absolute',
     top: 0,
     right: 0,
@@ -94,12 +90,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
-  horizontal: {
+  dividerLine: {
     flex: 1,
     height: 1,
     backgroundColor: 'black',
   },
-  horizontalText: {
+  dividerText: {
     width: 50,
     fontSize: 27,
     textAlign: 'center',
@@ -107,15 +103,17 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 20,
     color: colors.white,
+    textAlign:'right',
   },
-  buttonContents: {
-    alignItems: 'center',
-    padding: 10,
-    marginRight: '10%',
-    marginLeft: '10%',
-    marginBottom: '7%',
+  buttonStyles: {
+    padding: 15,
+    margin: 10,
+    width: 300,
+    borderRadius: 15,
   },
   buttonFacebook: {
+    flexDirection: 'column',
+    justifyContent: 'center',
     backgroundColor: '#4267B2',
   },
   buttonLinkedIn: {
@@ -123,5 +121,6 @@ const styles = StyleSheet.create({
   },
   buttonEmail: {
     backgroundColor: 'rgba(0, 0, 0, 0.70)',
+    marginBottom: 60,
   },
 });
