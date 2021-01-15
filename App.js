@@ -110,8 +110,6 @@ const styles = StyleSheet.create({
     borderRadius: 15,
   },
   buttonFacebook: {
-    flexDirection: 'column',
-    justifyContent: 'center',
     backgroundColor: '#4267B2',
   },
   buttonLinkedIn: {
