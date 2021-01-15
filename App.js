@@ -1,6 +1,14 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import {Alert, SafeAreaView, TouchableOpacity} from "react-native-web";
+import {
+  StyleSheet,
+  Text,
+  Platform,
+  SafeAreaView,
+  Alert,
+  Button,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import colors from "./colorScheme";
 
 export default function App(){
