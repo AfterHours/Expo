@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
   container: {
     fontFamily: 'Roboto',
     //MarginTop needed for ios, for text not to be next to notch
-    marginTop: Platform.OS === 'ios' ? 32 : 0,
+    marginTop: Platform.OS === 'android' ? 32 : 0,
     //Not a normal css property, part of react native enhancements
     // paddingHorizontal: 24,
     flex: 1,
