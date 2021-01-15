@@ -5,8 +5,6 @@ import {
   Platform,
   SafeAreaView,
   Alert,
-  Button,
-  TouchableOpacity,
   View,
 } from 'react-native';
 import colors from "./colorScheme";
@@ -58,12 +56,12 @@ export default function App(){
               accessibilityLabel="Sign up with Email button">
             Sign up using Email
           </Text>
-        </View>                      
+        </View>
 
       </SafeAreaView>
   );
 }
- 
+
 const styles = StyleSheet.create({
   container: {
     fontFamily: 'Roboto',
