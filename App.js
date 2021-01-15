@@ -17,7 +17,7 @@ export default function App(){
   }
   return (
       <SafeAreaView style={styles.container}>
-        <Text style={styles.LoginText} onPress={() => getLog()}> Login </Text>
+        <Text style={styles.LoginText} onPress={() => getLog()}> Expo Login </Text>
         <View style={[styles.buttonStyles,styles.buttonFacebook]}
         onPress={() => {
               console.log('FB Button pressed');
